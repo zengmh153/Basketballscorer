@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Basketballscorer</string>
+    <string name="team">team A</string>
+    <string name="zero">0</string>
+</resources>
