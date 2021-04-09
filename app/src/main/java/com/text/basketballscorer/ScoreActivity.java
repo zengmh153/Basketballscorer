@@ -15,11 +15,7 @@ public class ScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
     }
-    public void show(){
-        Log.i(TAG, "show: score="+score);
-        TextView show=findViewById(R.id.score);
 
-    }
     public void btn3 (View v){
         score +=3;
     }
