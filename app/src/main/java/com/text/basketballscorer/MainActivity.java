@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private  final  int scoreArray[]={1,2,3};
     private  int lastScore_a,lastScore_b,score_a,score_b;
-    private Button btna_1,btna_2,btna_3,btnb_1,btnb_2,btnb_3;
+    private Button btna_1,btna_2,btna_3,btnb_1,btnb_2,btnb_3,button2;
     private TextView test_score_a,test_score_b;
 
     @Override
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnb_1=findViewById(R.id.btnb_1);
         btnb_2=findViewById(R.id.btnb_2);
         btnb_3=findViewById(R.id.btnb_3);
+        button2=findViewById(R.id.button2);
 
 
         test_score_a=findViewById(R.id.score_a);
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnb_1.setOnClickListener(this);
         btnb_2.setOnClickListener(this);
         btnb_3.setOnClickListener(this);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case  R.id.btnb_3:
                 scoreAdd(1,scoreArray[2]);
+                break;
+            case  R.id.button2:
+                score_a=0;
+                score_b=0;
+                ShowText();
                 break;
 
             default:
