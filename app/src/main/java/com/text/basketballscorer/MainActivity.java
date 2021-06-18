@@ -1,11 +1,13 @@
 package com.text.basketballscorer;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -104,5 +106,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private  void ShowText(){
         test_score_a.setText(Integer.toString(score_a));
         test_score_b.setText(Integer.toString(score_b));
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        String scora=((TextView)findViewById(R.id.score_a)).getText().toString();
+        String scorb=((TextView)findViewById(R.id.score_a)).getText().toString();
+        outState.putString("teama_score",scora);
+        outState.putString("teamb_score",scorb);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String scora=savedInstanceState.getString("teama_score");
+        String scorb=savedInstanceState.getString("teamb_score");
+        ((TextView)findViewById(R.id.score_a)).setText(scora);
+        ((TextView)findViewById(R.id.score_b)).setText(scorb);
     }
 }

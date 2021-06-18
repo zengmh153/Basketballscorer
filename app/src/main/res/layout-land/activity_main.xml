@@ -135,7 +135,7 @@
         android:id="@+id/button2"
         android:layout_width="146dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
         android:text="reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
